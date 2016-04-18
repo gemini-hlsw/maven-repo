@@ -14,7 +14,7 @@
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
-            <version>2.11.7</version>
+            <version>2.11.8</version>
         </dependency>
         <dependency>
             <groupId>edu.gemini.ocs</groupId>
@@ -51,37 +51,31 @@
         <dependency>
             <groupId>org.scalacheck</groupId>
             <artifactId>scalacheck_2.11</artifactId>
-            <version>1.11.0</version>
+            <version>1.12.5</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.specs2</groupId>
             <artifactId>specs2-core_2.11</artifactId>
-            <version>2.5-scalaz-7.1.6</version>
+            <version>3.7</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.specs2</groupId>
             <artifactId>specs2-scalacheck_2.11</artifactId>
-            <version>2.5-scalaz-7.1.6</version>
+            <version>3.7</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.specs2</groupId>
             <artifactId>specs2-matcher-extra_2.11</artifactId>
-            <version>2.5-scalaz-7.1.6</version>
+            <version>3.7</version>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.scalaz.stream</groupId>
-                    <artifactId>scalaz-stream_2.11</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.scalatest</groupId>
             <artifactId>scalatest_2.11</artifactId>
-            <version>2.2.4</version>
+            <version>3.0.0-M15</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
