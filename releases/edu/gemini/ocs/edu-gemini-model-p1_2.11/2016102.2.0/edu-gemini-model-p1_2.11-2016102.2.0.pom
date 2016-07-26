@@ -19,7 +19,7 @@
         <dependency>
             <groupId>edu.gemini.ocs</groupId>
             <artifactId>edu-gemini-spmodel-core_2.11</artifactId>
-            <version>2016001.1.1</version>
+            <version>2016102.1.1</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
