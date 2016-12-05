@@ -49,12 +49,12 @@
         <dependency>
             <groupId>edu.gemini.ocs</groupId>
             <artifactId>edu-gemini-model-p1-pdf_2.11</artifactId>
-            <version>2017001.1.0</version>
+            <version>2017001.1.1</version>
         </dependency>
         <dependency>
             <groupId>edu.gemini.ocs</groupId>
             <artifactId>edu-gemini-model-p1_2.11</artifactId>
-            <version>2017001.1.0</version>
+            <version>2017001.1.1</version>
         </dependency>
         <dependency>
             <groupId>edu.gemini.ocs</groupId>
