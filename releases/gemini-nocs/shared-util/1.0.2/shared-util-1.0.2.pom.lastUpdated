@@ -1,0 +1,8 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Tue May 30 12:32:21 CLT 2017
+https\://github.com/gemini-hlsw/maven-repo/raw/master/releases/.error=
+http\://repo1.maven.org/maven2/.error=
+http\://sbfswgosxdev-mp1.cl.gemini.edu\:8081/artifactory/libs-release-local/.error=
+https\://github.com/gemini-hlsw/maven-repo/raw/master/releases/.lastUpdated=1496160664550
+http\://repo1.maven.org/maven2/.lastUpdated=1496160664982
+http\://sbfswgosxdev-mp1.cl.gemini.edu\:8081/artifactory/libs-release-local/.lastUpdated=1496161941778
