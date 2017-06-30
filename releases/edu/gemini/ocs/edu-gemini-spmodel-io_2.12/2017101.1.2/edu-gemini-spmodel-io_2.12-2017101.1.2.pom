@@ -2,11 +2,11 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
     <groupId>edu.gemini.ocs</groupId>
-    <artifactId>edu-gemini-seqexec-odb_2.12</artifactId>
+    <artifactId>edu-gemini-spmodel-io_2.12</artifactId>
     <packaging>bundle</packaging>
-    <description>edu.gemini.seqexec.odb</description>
+    <description>edu.gemini.spModel.io</description>
     <version>2017101.1.2</version>
-    <name>edu.gemini.seqexec.odb</name>
+    <name>edu.gemini.spModel.io</name>
     <organization>
         <name>edu.gemini.ocs</name>
     </organization>
@@ -15,6 +15,11 @@
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
             <version>2.12.2</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.ocs</groupId>
+            <artifactId>edu-gemini-shared-skyobject_2.12</artifactId>
+            <version>2017101.1.2</version>
         </dependency>
         <dependency>
             <groupId>edu.gemini.ocs</groupId>
@@ -33,22 +38,12 @@
         </dependency>
         <dependency>
             <groupId>edu.gemini.ocs</groupId>
-            <artifactId>edu-gemini-spmodel-io_2.12</artifactId>
-            <version>2017101.1.2</version>
-        </dependency>
-        <dependency>
-            <groupId>edu.gemini.ocs</groupId>
             <artifactId>edu-gemini-spmodel-pio_2.12</artifactId>
             <version>2017101.1.2</version>
         </dependency>
         <dependency>
             <groupId>edu.gemini.ocs</groupId>
-            <artifactId>jsky-coords_2.12</artifactId>
-            <version>2017101.1.2</version>
-        </dependency>
-        <dependency>
-            <groupId>edu.gemini.ocs</groupId>
-            <artifactId>jsky-util_2.12</artifactId>
+            <artifactId>edu-gemini-util-javax-mail_2.12</artifactId>
             <version>2017101.1.2</version>
         </dependency>
         <dependency>
