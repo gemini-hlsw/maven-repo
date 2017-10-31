@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <groupId>edu.gemini.external.osgi</groupId>
+        <artifactId>wrapper-bundle-settings</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <properties>
+        <wrapped.groupId>org.epics</wrapped.groupId>
+    </properties>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.gemini.external.osgi.com.cosylab.epics.caj</groupId>
+    <artifactId>caj</artifactId>
+    <version>1.1.13</version>
+
+    <name>Java Channel Access Libraries - caj.jar [osgi]</name>
+    <description>Cosylab JCA library wrapped in OSGi</description>
+
+    <packaging>bundle</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>${wrapped.groupId}</groupId>
+            <artifactId>${project.artifactId}</artifactId>
+            <version>${project.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>sbfosxdev01.cl.gemini.edu</id>
+            <name>sbfosxdev01.cl.gemini.edu-releases</name>
+            <url>http://build.cl.gemini.edu:8081/artifactory/ext-releases-local</url>
+        </repository>
+    </repositories>
+
+</project>
