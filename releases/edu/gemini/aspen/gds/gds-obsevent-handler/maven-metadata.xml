@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>edu.gemini.aspen.gds</groupId>
+  <artifactId>gds-obsevent-handler</artifactId>
+  <versioning>
+    <release>0.4.11</release>
+    <versions>
+      <version>0.4.11</version>
+    </versions>
+    <lastUpdated>20180313182849</lastUpdated>
+  </versioning>
+</metadata>

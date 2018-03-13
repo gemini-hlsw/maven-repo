@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <relativePath>../poms/scala/</relativePath>
+        <groupId>edu.gemini.aspen.giapi-osgi.build</groupId>
+        <artifactId>scala-compiled-bundle-settings</artifactId>
+        <version>14.4.5</version>
+    </parent>
+
+    <properties>
+        <bundle.symbolicName>edu.gemini.aspen.gds.web.ui.api</bundle.symbolicName>
+        <bundle.namespace>edu.gemini.aspen.gds.web.ui.api</bundle.namespace>
+        <gwt.version>2.3.0</gwt.version>
+        <gwt.plugin.version>2.3.0-1</gwt.plugin.version>
+    </properties>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.gemini.aspen.gds.web.ui</groupId>
+    <artifactId>gds-web-ui</artifactId>
+    <version>0.3.8</version>
+
+    <name>GDS Web UI</name>
+    <description>GDS Web UI</description>
+
+    <packaging>bundle</packaging>
+
+
+    <build>
+        <plugins>
+            <!-- Compiles your custom GWT components with the GWT compiler -->
+            <!-- A hosted mode browser for client-side widget debugging can be run
+                   with the goal gwt:run after uncommenting the correct line below. A remote
+                   debugger can then be connected to port 8998. Note that e.g. a Jetty server
+                   should be running with the server side parts - use the goal jetty:run . -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <version>${gwt.plugin.version}</version>
+                <configuration>
+                    <!-- if you don't specify any modules, the plugin will find them -->
+                    <modules>
+                        <module>GDSCoreVaadinApp</module>
+                    </modules>
+                    <!-- On Mac running Snow Leopard, add "-d32" -->
+                    <!-- This causes error messages (but build works) in phase "package":
+                             two processes would use the same debug port -->
+                    <extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
+                    <webappDirectory>${basedir}/src/main/resources/VAADIN/widgetsets</webappDirectory>
+                    <hostedWebapp>${basedir}/src/main/resources/VAADIN/widgetsets</hostedWebapp>
+                    <noServer>true</noServer>
+                    <!-- Remove draftCompile when project is ready -->
+                    <draftCompile>false</draftCompile>
+                    <style>OBF</style>
+                    <!-- <force>true</force> -->
+                    <compileReport>false</compileReport>
+                </configuration>
+                <!-- We seldom compile the widgetset so let's not make it a default phase -->
+                <!--executions>
+                    <execution>
+                        <goals>
+                            <goal>gwt:compile</goal>
+                        </goals>
+                    </execution>
+                </executions-->
+                <dependencies>
+                    <dependency>
+                        <groupId>com.google.gwt</groupId>
+                        <artifactId>gwt-dev</artifactId>
+                        <version>${gwt.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.google.gwt</groupId>
+                        <artifactId>gwt-user</artifactId>
+                        <version>${gwt.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <!-- As we are doing "inplace" GWT compilation, ensure the widgetset -->
+            <!-- directory is cleaned properly -->
+            <!--plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.4.1</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>src/main/resources/VAADIN/widgetsets</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>gwt:compile</phase>
+                    </execution>
+                </executions>
+            </plugin-->
+
+            <plugin>
+                <groupId>com.vaadin</groupId>
+                <artifactId>vaadin-maven-plugin</artifactId>
+                <version>1.0.2</version>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <!-- if you don't specify any modules, the plugin will find them -->
+                            <modules>
+                                <module>GDSCoreVaadinApp</module>
+                            </modules>
+
+                        </configuration>
+                        <goals>
+                            <goal>update-widgetset</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>edu.gemini.aspen.gds</groupId>
+            <artifactId>gds-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.gmp</groupId>
+            <artifactId>gmp-top</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.giapi.web.ui.vaadin</groupId>
+            <artifactId>giapi-vaadin-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.ops4j.pax.web</groupId>
+            <artifactId>pax-web-jetty-bundle</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.ops4j.pax.web</groupId>
+            <artifactId>pax-web-extender-whiteboard</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin</artifactId>
+        </dependency>
+
+        <!-- Unfortunately we need to add in here widgetsets used by other gds-web modules -->
+        <dependency>
+            <groupId>edu.gemini.external.osgi.org.vaadin</groupId>
+            <artifactId>aceeditor</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.external.osgi.org.vaadin.addons</groupId>
+            <artifactId>drawer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.external.osgi.org.vaadin.addons</groupId>
+            <artifactId>refresher</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.ipojo.annotations</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.ipojo</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
