@@ -3,10 +3,11 @@
   <groupId>edu.gemini.aspen.gmp</groupId>
   <artifactId>gmp-services</artifactId>
   <versioning>
-    <release>0.4.11</release>
+    <release>0.4.12</release>
     <versions>
       <version>0.4.11</version>
+      <version>0.4.12</version>
     </versions>
-    <lastUpdated>20180313182641</lastUpdated>
+    <lastUpdated>20180320004623</lastUpdated>
   </versioning>
 </metadata>

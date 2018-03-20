@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <relativePath>../poms/compiled/</relativePath>
+        <groupId>edu.gemini.aspen.giapi-osgi.build</groupId>
+        <artifactId>compiled-bundle-settings</artifactId>
+        <version>14.4.6</version>
+    </parent>
+
+    <properties>
+        <bundle.symbolicName>edu.gemini.giapi.data.fileevent-handler</bundle.symbolicName>
+        <bundle.namespace>edu.gemini.giapi.data.fileevent.handler</bundle.namespace>
+    </properties>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.gemini.aspen</groupId>
+    <artifactId>giapi-fileevent-handler</artifactId>
+    <version>0.1.29</version>
+    <description>File Event Handlers for testing purpose.</description>
+
+    <name>GIAPI File Event Handler Demo</name>
+
+    <packaging>jar</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-ipojo-plugin</artifactId>
+                <version>${org.apache.felix.ipojo}</version>
+                <executions>
+                    <execution>
+                        <id>compile-ipojo</id>
+                        <phase />
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>edu.gemini.aspen</groupId>
+            <artifactId>giapi</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
