@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <relativePath>../poms/scala/</relativePath>
+        <groupId>edu.gemini.aspen.giapi-osgi.build</groupId>
+        <artifactId>scala-compiled-bundle-settings</artifactId>
+        <version>14.4.6</version>
+    </parent>
+
+    <properties>
+        <bundle.symbolicName>edu.gemini.aspen.gds.web.ui.keywords</bundle.symbolicName>
+        <bundle.namespace>edu.gemini.aspen.gds.web.ui.keywords</bundle.namespace>
+    </properties>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.gemini.aspen.gds.web.ui</groupId>
+    <artifactId>gds-web-ui-keywords</artifactId>
+    <version>0.1.29</version>
+
+    <name>GDS Web UI - Keywords Editor</name>
+    <description>GDS Web UI - Keywords Editor</description>
+
+    <packaging>bundle</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>edu.gemini.aspen.gds</groupId>
+            <artifactId>gds-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.gds.web.ui</groupId>
+            <artifactId>gds-web-ui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.giapi.web.ui.vaadin</groupId>
+            <artifactId>giapi-vaadin-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.external.osgi.org.vaadin.addons</groupId>
+            <artifactId>confirmdialog</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.external.osgi.org.vaadin</groupId>
+            <artifactId>aceeditor</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.ipojo.annotations</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

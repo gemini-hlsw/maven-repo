@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <relativePath>../../poms/scala/</relativePath>
+        <groupId>edu.gemini.aspen.giapi-osgi.build</groupId>
+        <artifactId>scala-compiled-bundle-settings</artifactId>
+        <version>14.4.6</version>
+    </parent>
+
+    <properties>
+        <bundle.symbolicName>edu.gemini.gpi.observationstatus</bundle.symbolicName>
+        <bundle.namespace>edu.gemini.gpi.observationstatus</bundle.namespace>
+    </properties>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.gemini.gpi</groupId>
+    <artifactId>gpi-observation-status</artifactId>
+    <version>0.2.9</version>
+
+    <name>GPI Observation Status</name>
+    <description>GPI Observation Status</description>
+
+    <packaging>bundle</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-ipojo-plugin</artifactId>
+                <version>${org.apache.felix.ipojo}</version>
+                <executions>
+                    <execution>
+                        <id>compile-ipojo</id>
+                        <phase />
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>edu.gemini.aspen.gds</groupId>
+            <artifactId>gds-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen</groupId>
+            <artifactId>giapi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.gmp</groupId>
+            <artifactId>gmp-top</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen</groupId>
+            <artifactId>giapi-jms-util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.giapi</groupId>
+            <artifactId>giapi-status-setter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.epics</groupId>
+            <artifactId>epics-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.util.osgi</groupId>
+            <artifactId>osgi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.scalaz</groupId>
+            <artifactId>scalaz-core_2.10</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

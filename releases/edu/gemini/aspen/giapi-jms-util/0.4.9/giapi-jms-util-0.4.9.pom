@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <relativePath>../poms/compiled/</relativePath>
+        <groupId>edu.gemini.aspen.giapi-osgi.build</groupId>
+        <artifactId>compiled-bundle-settings</artifactId>
+        <version>14.4.6</version>
+    </parent>
+
+    <properties>
+        <bundle.symbolicName>edu.gemini.aspen.giapi-jms-util</bundle.symbolicName>
+        <bundle.namespace>edu.gemini.aspen.giapi.util.jms</bundle.namespace>
+    </properties>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.gemini.aspen</groupId>
+    <artifactId>giapi-jms-util</artifactId>
+    <version>0.4.9</version>
+
+    <name>GIAPI JMS Util</name>
+    <description>Utility classes to convert GIAPI data using JMS</description>
+
+    <packaging>bundle</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-ipojo-plugin</artifactId>
+                <version>${org.apache.felix.ipojo}</version>
+                <executions>
+                    <execution>
+                        <id>compile-ipojo</id>
+                        <phase />
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>edu.gemini.aspen</groupId>
+            <artifactId>giapi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.jms</groupId>
+            <artifactId>jms-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-core</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
