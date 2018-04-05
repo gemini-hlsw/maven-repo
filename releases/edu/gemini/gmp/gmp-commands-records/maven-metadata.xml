@@ -3,14 +3,15 @@
   <groupId>edu.gemini.gmp</groupId>
   <artifactId>gmp-commands-records</artifactId>
   <versioning>
-    <release>0.6.7</release>
+    <release>0.7.0</release>
     <versions>
       <version>0.6.3</version>
       <version>0.6.4</version>
       <version>0.6.5</version>
       <version>0.6.6</version>
       <version>0.6.7</version>
+      <version>0.7.0</version>
     </versions>
-    <lastUpdated>20180320004622</lastUpdated>
+    <lastUpdated>20180405152938</lastUpdated>
   </versioning>
 </metadata>
