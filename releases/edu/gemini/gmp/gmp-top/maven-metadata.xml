@@ -3,7 +3,7 @@
   <groupId>edu.gemini.gmp</groupId>
   <artifactId>gmp-top</artifactId>
   <versioning>
-    <release>0.2.0</release>
+    <release>0.2.1</release>
     <versions>
       <version>0.1.5</version>
       <version>0.1.6</version>
@@ -11,7 +11,8 @@
       <version>0.1.8</version>
       <version>0.1.9</version>
       <version>0.2.0</version>
+      <version>0.2.1</version>
     </versions>
-    <lastUpdated>20180405152916</lastUpdated>
+    <lastUpdated>20180504201138</lastUpdated>
   </versioning>
 </metadata>
