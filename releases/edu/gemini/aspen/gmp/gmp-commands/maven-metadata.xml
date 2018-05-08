@@ -3,13 +3,14 @@
   <groupId>edu.gemini.aspen.gmp</groupId>
   <artifactId>gmp-commands</artifactId>
   <versioning>
-    <release>1.2.1</release>
+    <release>1.2.2</release>
     <versions>
       <version>1.1.8</version>
       <version>1.1.9</version>
       <version>1.2.0</version>
       <version>1.2.1</version>
+      <version>1.2.2</version>
     </versions>
-    <lastUpdated>20180504201139</lastUpdated>
+    <lastUpdated>20180508191134</lastUpdated>
   </versioning>
 </metadata>

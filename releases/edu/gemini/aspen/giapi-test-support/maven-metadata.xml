@@ -3,13 +3,14 @@
   <groupId>edu.gemini.aspen</groupId>
   <artifactId>giapi-test-support</artifactId>
   <versioning>
-    <release>0.2.1</release>
+    <release>0.2.2</release>
     <versions>
       <version>0.1.28</version>
       <version>0.1.29</version>
       <version>0.2.0</version>
       <version>0.2.1</version>
+      <version>0.2.2</version>
     </versions>
-    <lastUpdated>20180504201135</lastUpdated>
+    <lastUpdated>20180508191053</lastUpdated>
   </versioning>
 </metadata>
