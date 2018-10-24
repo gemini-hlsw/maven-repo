@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.gemini</groupId>
+    <artifactId>gemini-locales_sjs0.6_2.12</artifactId>
+    <packaging>jar</packaging>
+    <description>Gemini locales db for Scala.js applications</description>
+    <url>https://github.com/gemini-hlsw/gemini-locales</url>
+    <version>0.1.0-2018f</version>
+    <licenses>
+        <license>
+            <name>BSD 3-Clause License</name>
+            <url>https://opensource.org/licenses/BSD-3-Clause</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <name>gemini-locales</name>
+    <organization>
+        <name>edu.gemini</name>
+        <url>https://github.com/gemini-hlsw/gemini-locales</url>
+    </organization>
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.12.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-js</groupId>
+            <artifactId>scalajs-library_2.12</artifactId>
+            <version>0.6.25</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-js</groupId>
+            <artifactId>scalajs-test-interface_2.12</artifactId>
+            <version>0.6.25</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.cquiroz</groupId>
+            <artifactId>scala-java-time_sjs0.6_2.12</artifactId>
+            <version>2.0.0-M13</version>
+        </dependency>
+    </dependencies>
+</project>
