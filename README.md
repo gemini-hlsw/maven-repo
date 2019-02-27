@@ -7,7 +7,7 @@ This repository is used as a public maven repository for Gemini projects
 To publish OCS artifacts to this repository you need to:
 
 1. Fork the maven-repo repository at [maven-repo](https://github.com/gemini-hlsw/maven-repo)
-2. Checkout your fork to your local development environment, we'll assume it is at dir `OCS_REPO`
+2. Checkout your fork to your local development environment, we'll assume it is at dir `OCS_REPO`. It should point to the `releases` directory of `maven-repo`.
 3. On the ocs project, file `build.sbt` change the `publishTo` setting from
 
 ```
