@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>edu.gemini.aspen.giapi-osgi.build</groupId>
+  <artifactId>shared-plugin-settings</artifactId>
+  <version>15.0.3-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20200212.142753</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20200212142753</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>15.0.3-20200212.142753-1</value>
+        <updated>20200212142753</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

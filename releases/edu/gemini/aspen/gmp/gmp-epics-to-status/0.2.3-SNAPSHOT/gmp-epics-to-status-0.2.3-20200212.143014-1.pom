@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <relativePath>../poms/scala/</relativePath>
+        <groupId>edu.gemini.aspen.giapi-osgi.build</groupId>
+        <artifactId>scala-compiled-bundle-settings</artifactId>
+        <version>15.0.3-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <bundle.symbolicName>edu.gemini.aspen.gmp.epics-to-status</bundle.symbolicName>
+        <bundle.namespace>edu.gemini.aspen.gmp.epicstostatus</bundle.namespace>
+    </properties>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.gemini.aspen.gmp</groupId>
+    <artifactId>gmp-epics-to-status</artifactId>
+    <version>0.2.3-SNAPSHOT</version>
+
+    <name>GMP EPICS To Status</name>
+    <description>GMP EPICS To Status</description>
+
+    <packaging>bundle</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>edu.gemini.aspen</groupId>
+            <artifactId>giapi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.epics</groupId>
+            <artifactId>epics-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen</groupId>
+            <artifactId>giapi-jms-util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.cas</groupId>
+            <artifactId>cas</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.jms</groupId>
+            <artifactId>jms-activemq-provider</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen</groupId>
+            <artifactId>giapi-status-service</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.giapi</groupId>
+            <artifactId>giapi-status-setter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.util.osgi</groupId>
+            <artifactId>osgi</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.8.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <generatePackage>edu.gemini.aspen.gmp.epicstostatus.generated</generatePackage>
+                    <removeOldOutput>true</removeOldOutput>
+                    <schemaIncludes>
+                        <schemaInclude>**/*.xsd</schemaInclude>
+                    </schemaIncludes>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+</project>
