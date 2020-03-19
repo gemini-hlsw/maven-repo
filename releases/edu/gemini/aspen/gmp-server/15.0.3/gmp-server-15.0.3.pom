@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>edu.gemini.aspen</groupId>
+        <artifactId>giapi-osgi</artifactId>
+        <version>15.0.3</version>
+    </parent>
+
+    <artifactId>gmp-server</artifactId>
+    <version>15.0.3</version>
+
+    <packaging>pom</packaging>
+
+    <name>GMP Server Distribution</name>
+
+    <properties>
+        <noUpload>false</noUpload>
+        <installationroot>/gemsoft/opt/gpi</installationroot>
+
+        <felix.cm.loglevel>0</felix.cm.loglevel>
+        <felix.log.level>0</felix.log.level>
+        <felix.fileinstall.log.level>4</felix.fileinstall.log.level>
+
+        <!-- Configuration dir -->
+        <conf.base>../../conf</conf.base>
+        <logs.dir>../../logs</logs.dir>
+
+        <gmp.version>${project.version}</gmp.version>
+
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>edu.gemini.aspen</groupId>
+            <artifactId>giapi-fileevents</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen</groupId>
+            <artifactId>giapi-obsevents</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.gmp</groupId>
+            <artifactId>gmp-commands-jms-bridge</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.jms</groupId>
+            <artifactId>jms-activemq-broker</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.jms</groupId>
+            <artifactId>jms-activemq-provider</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-annotation_1.0_spec</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.gmp</groupId>
+            <artifactId>gmp-tcs-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.gmp</groupId>
+            <artifactId>gmp-pcs-updater</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.gmp</groupId>
+            <artifactId>gmp-status-gateway</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.gmp</groupId>
+            <artifactId>gmp-statusdb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen</groupId>
+            <artifactId>giapi-status-dispatcher</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.gmp</groupId>
+            <artifactId>gmp-status-simulator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.gmp</groupId>
+            <artifactId>gmp-status-translator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.gmp</groupId>
+            <artifactId>gmp-logging</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.cas</groupId>
+            <artifactId>cas</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.gmp</groupId>
+            <artifactId>gmp-epics-simulator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.gmp</groupId>
+            <artifactId>gmp-epics-status-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen</groupId>
+            <artifactId>epics-heartbeat</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.gmp</groupId>
+            <artifactId>gmp-epics-to-status</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.gmp</groupId>
+            <artifactId>gmp-commands-records</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>edu.gemini.aspen.gmp</groupId>
+            <artifactId>gmp-health</artifactId>
+        </dependency>
+
+        <!-- GDS health imports all the GDS bundles -->
+        <!--dependency>
+            <groupId>edu.gemini.aspen.gds</groupId>
+            <artifactId>gds-health</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.gds</groupId>
+            <artifactId>gds-constant-actors</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.gds</groupId>
+            <artifactId>gds-properties-actors</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.gds</groupId>
+            <artifactId>gds-postprocessing-policy</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.aspen.gds</groupId>
+            <artifactId>gds-fits-checker</artifactId>
+        </dependency-->
+
+        <!-- <dependency>
+            <groupId>edu.gemini.aspen.gmp</groupId>
+            <artifactId>gmp-webconsole-docs</artifactId>
+            <type>war</type>
+        </dependency> -->
+
+        <!--dependency>
+            <groupId>org.ops4j.pax.web</groupId>
+            <artifactId>pax-web-jetty-bundle</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.ops4j.pax.web</groupId>
+            <artifactId>pax-web-extender-whiteboard</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.ops4j.pax.web</groupId>
+            <artifactId>pax-web-extender-war</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.external.osgi.org.eclipse.jdt.core.compiler</groupId>
+            <artifactId>ecj</artifactId>
+            <scope>provided</scope>
+        </dependency-->
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Export maven properties -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0-alpha-2</version>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>write-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <outputFile>
+                                ${project.build.outputDirectory}/config.properties
+                            </outputFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <!-- <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>1.0-beta-6</version>
+            </extension>
+        </extensions> -->
+    </build>
+
+    <profiles>
+        <profile>
+            <!-- When called it builds the documentation -->
+            <id>documentation</id>
+            <build>
+                <plugins>
+                    <!-- Do doxygen documentation -->
+                    <plugin>
+                        <groupId>com.soebes.maven.plugins.dmg</groupId>
+                        <artifactId>doxygen-maven-plugin</artifactId>
+                        <version>1.0.1</version>
+                        <configuration>
+                            <filePatterns>*.doxygen *.doxy *.java *.xsd *.xml *.properties *.cfg</filePatterns>
+                            <recursive>true</recursive>
+                            <excludePatterns>*/test/*Test*.java */target/* *pom.xml</excludePatterns>
+                            <optimizeOutputJava>true</optimizeOutputJava>
+                            <haveDot>true</haveDot>
+                            <quiet>false</quiet>
+                            <input>../</input>
+                            <projectName>"GIAPI - GMP (Version: ${gmp.version})"</projectName>
+                            <generateLatex>false</generateLatex>
+                            <generateHtml>true</generateHtml>
+                            <htmlHeader>${basedir}/src/main/doc/header.html</htmlHeader>
+                            <htmlFooter>${basedir}/src/main/doc/footer.html</htmlFooter>
+                            <stripFromPath>${basedir}</stripFromPath>
+                            <extractAll>true</extractAll>
+                            <imagePath>src/main/doc/ src/main/doc/gemini_records/</imagePath>
+                            <examplePath>src/main/doc/gemini_records target/site/doxygen</examplePath>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>doxygen-documentation</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>report</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.scala-tools</groupId>
+                        <artifactId>maven-scala-plugin</artifactId>
+                        <version>2.15.2</version>
+                        <configuration>
+                            <includes>
+                                <include>**/*.scala</include>
+                            </includes>
+                            <sourceDir>../</sourceDir>
+                            <excludes>
+                                <exclude>**/src/test/**/*.scala</exclude>
+                            </excludes>
+                            <jvmArgs>
+                                <jvmArg>-Xmx2048m</jvmArg>
+                            </jvmArgs>
+                            <!--Except for doctitle, the rest don't seem to work-->
+                            <!--<bottom>bottom: Copyright (c) {inceptionYear}-{currentYear} {organizationName}. All Rights Reserved..</bottom>-->
+                            <!--<description>description: ScalaDoc API.</description>-->
+                            <!--<doctitle>doctitle: ${project.name} ${project.version} API.</doctitle>-->
+                            <!--<footer>footer</footer>-->
+                            <!--<header>header</header>-->
+                            <!--<top>top</top>-->
+                            <!--<windowtitle>windowtitle: ${project.name} ${project.version} API.</windowtitle>-->
+                            <scalaVersion>${scala-lang.version}</scalaVersion>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>gpi</id>
+            <properties>
+                <gmp.instance>gpi</gmp.instance>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>edu.gemini.gpi</groupId>
+                    <artifactId>gpi-observation-status</artifactId>
+                    <version>0.2.10-SNAPSHOT</version>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>production</id>
+            <dependencies>
+                <!-- Felix core -->
+                <dependency>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>org.apache.felix.framework</artifactId>
+                    <version>${felix.framework.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>org.apache.felix.main</artifactId>
+                    <version>${felix.framework.version}</version>
+                </dependency>
+                <!-- PAX Runner -->
+                <dependency>
+                    <groupId>org.ops4j.pax.runner</groupId>
+                    <artifactId>pax-runner</artifactId>
+                    <version>${pax-runner.version}</version>
+                    <exclusions>
+        <exclusion>
+            <groupId>*</groupId>
+            <artifactId>*</artifactId>
+        </exclusion>
+    </exclusions>
+                </dependency>
+                <!-- Felix Shell and GOGO -->
+                <dependency>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>org.apache.felix.gogo.command</artifactId>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>org.easymock</groupId>
+                            <artifactId>easymock</artifactId>
+                        </exclusion>
+                        <exclusion>
+                            <artifactId>org.apache.felix</artifactId>
+                            <groupId>org.apache.felix.bundlerepository</groupId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
+                <dependency>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>org.apache.felix.gogo.runtime</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>org.apache.felix.gogo.shell</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>org.apache.felix.shell.remote</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>org.apache.felix.eventadmin</artifactId>
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <!-- Use gmaven to extract a version number to be suitable for RPM -->
+                    <plugin>
+                        <groupId>org.codehaus.gmaven</groupId>
+                        <artifactId>gmaven-plugin</artifactId>
+                        <version>1.4</version>
+                        <executions>
+                            <execution>
+                                <id>setup-groovy</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>execute</goal>
+                                </goals>
+                                <configuration>
+                                    <source>
+                                        project.properties["project.rpmversion"] = project.version.replaceAll("-.*", "")
+                                    </source>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- Get a build number -->
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>buildnumber-maven-plugin</artifactId>
+                        <version>1.0</version>
+                        <executions>
+                            <execution>
+                                <id>site-buildnumber</id>
+                                <phase>pre-site</phase>
+                                <goals>
+                                    <goal>create</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>deploy-buildnumber</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>create</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <useLastCommittedRevision>false</useLastCommittedRevision>
+                            <!--getRevisionOnlyOnce>true</getRevisionOnlyOnce-->
+                            <scmDirectory>..</scmDirectory>
+                        </configuration>
+                    </plugin>
+                    <!-- Copy and filter resources -->
+                    <plugin>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <version>2.4.3</version>
+                        <executions>
+                            <execution>
+                                <id>copy-resources</id>
+                                <!-- here the phase you need -->
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <encoding>UTF-8</encoding>
+                            <outputDirectory>target/site/doxygen</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/doc</directory>
+                                    <filtering>true</filtering>
+                                    <includes>
+                                        <include>gpidoc.css</include>
+                                        <include>gemini.jpg</include>
+                                        <include>README</include>
+                                    </includes>
+                                </resource>
+                                <resource>
+                                    <directory>../giapi-tester/src/main/resources/edu/gemini/giapi/tool/help</directory>
+                                    <includes>
+                                        <include>usage.txt</include>
+                                    </includes>
+                                </resource>
+                                <resource>
+                                    <directory>src/main/doc/gemini_records</directory>
+                                    <includes>
+                                        <include>gem*.gif</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </plugin>
+                    <!-- Create an assembly -->
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>distro-assembly</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <finalName>${project.artifactId}-${gmp.version}</finalName>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <tarLongFileMode>gnu</tarLongFileMode>
+                                    <attach>false</attach>
+                                    <descriptors>
+                                        <descriptor>src/main/assembly/assembly.xml</descriptor>
+                                    </descriptors>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- Create an RPM -->
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>rpm-maven-plugin</artifactId>
+                        <version>2.1-alpha-1</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>rpm</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <name>${project.artifactId}</name>
+                            <group>Gemini</group>
+                            <needarch>false</needarch>
+                            <targetOS>linux</targetOS>
+                            <targetVendor>redhat</targetVendor>
+                            <requires>
+                                <require>java &gt;= 1.6.0</require>
+                            </requires>
+                            <release>${buildNumber}</release>
+                            <mappings>
+                                <!--jars-->
+                                <mapping>
+                                    <directory>${installationroot}/${project.artifactId}-${gmp.version}/bundles
+                                    </directory>
+                                    <sources>
+                                        <source>
+                                            <location>
+                                                ${project.build.directory}/${project.artifactId}-${gmp.version}/${project.artifactId}-${gmp.version}/bundles/
+                                            </location>
+                                            <targetArchitecture>noarch</targetArchitecture>
+                                        </source>
+                                    </sources>
+                                    <directoryIncluded>false</directoryIncluded>
+                                    <filemode>644</filemode>
+                                    <username>software</username>
+                                    <groupname>gemini</groupname>
+                                </mapping>
+                                <!-- felix repo bundle-->
+                                <mapping>
+                                    <directory>${installationroot}/${project.artifactId}-${gmp.version}/felix
+                                    </directory>
+                                    <sources>
+                                        <source>
+                                            <location>
+                                                ${project.build.directory}/${project.artifactId}-${gmp.version}/${project.artifactId}-${gmp.version}/felix/
+                                            </location>
+                                            <targetArchitecture>noarch</targetArchitecture>
+                                        </source>
+                                    </sources>
+                                    <directoryIncluded>false</directoryIncluded>
+                                    <filemode>644</filemode>
+                                    <username>software</username>
+                                    <groupname>gemini</groupname>
+                                </mapping>
+
+                                <!--readme-->
+                                <mapping>
+                                    <directory>${installationroot}/${project.artifactId}-${gmp.version}/</directory>
+                                    <sources>
+                                        <source>
+                                            <location>target/site/doxygen/README</location>
+                                        </source>
+                                    </sources>
+                                    <directoryIncluded>false</directoryIncluded>
+                                    <filemode>644</filemode>
+                                    <username>software</username>
+                                    <groupname>gemini</groupname>
+                                </mapping>
+
+                                <!--config files-->
+                                <mapping>
+                                    <directory>${installationroot}/${project.artifactId}-${gmp.version}/conf</directory>
+                                    <sources>
+                                        <source>
+                                            <location>
+                                                ${project.build.directory}/${project.artifactId}-${gmp.version}/${project.artifactId}-${gmp.version}/conf
+                                            </location>
+                                        </source>
+                                    </sources>
+                                    <configuration>true</configuration>
+                                    <directoryIncluded>false</directoryIncluded>
+                                    <filemode>644</filemode>
+                                    <username>software</username>
+                                    <groupname>gemini</groupname>
+                                </mapping>
+                                <!--executables-->
+                                <mapping>
+                                    <directory>${installationroot}/${project.artifactId}-${project.version}/bin
+                                    </directory>
+                                    <sources>
+                                        <source>
+                                            <location>
+                                                ${project.build.directory}/${project.artifactId}-${gmp.version}/${project.artifactId}-${gmp.version}/bin/
+                                            </location>
+                                            <includes>
+                                                <include>gmp-server</include>
+                                                <include>start.sh</include>
+                                                <include>giapi-tester.sh</include>
+                                                <include>gmp-server-ctl.sh</include>
+                                            </includes>
+                                        </source>
+                                    </sources>
+                                    <directoryIncluded>false</directoryIncluded>
+                                    <filemode>755</filemode>
+                                    <username>software</username>
+                                    <groupname>gemini</groupname>
+                                </mapping>
+                                <!-- Executable jars -->
+                                <mapping>
+                                    <sources>
+                                        <source>
+                                            <location>
+                                                ${project.build.directory}/${project.artifactId}-${gmp.version}/${project.artifactId}-${gmp.version}/bin/
+                                            </location>
+                                            <includes>
+                                                <include>runner.args</include>
+                                                <include>giapi-tester.jar</include>
+                                                <include>pax-runner-${pax-runner.version}.jar</include>
+                                            </includes>
+                                        </source>
+                                    </sources>
+                                    <directory>${installationroot}/${project.artifactId}-${project.version}/bin
+                                    </directory>
+                                    <directoryIncluded>false</directoryIncluded>
+                                    <filemode>644</filemode>
+                                    <username>software</username>
+                                    <groupname>gemini</groupname>
+                                </mapping>
+                                <mapping>
+                                    <directory>${installationroot}/${project.artifactId}-${project.version}/docs
+                                    </directory>
+                                    <sources>
+                                        <source>
+                                            <location>target/site/doxygen</location>
+                                        </source>
+                                    </sources>
+                                    <documentation>true</documentation>
+                                    <directoryIncluded>false</directoryIncluded>
+                                    <filemode>644</filemode>
+                                    <username>software</username>
+                                    <groupname>gemini</groupname>
+                                </mapping>
+                            </mappings>
+                            <preinstallScriptlet>
+                                <script>
+                                    #check for user, or create it?
+                                    id -u software &amp;&gt; /dev/null || useradd software -u 3624 -g gemini -m &amp;&gt; /dev/null || (groupadd -g 2000 gemini &amp;&gt; /dev/null &amp;&amp; useradd software -g gemini -m &amp;&gt; /dev/null) || echo "Problem: could not create user software"
+                                </script>
+                            </preinstallScriptlet>
+                            <postinstallScriptlet>
+                                <script>
+                                    #create logs/ directory
+                                    mkdir -p ${installationroot}/${project.artifactId}-${gmp.version}/logs
+
+                                    #change user/group for all files(particularly directories)
+                                    chown -R software.gemini ${installationroot}/${project.artifactId}-${gmp.version}/
+
+                                    #symlink /gemsoft/opt/gpi/gmp -&gt; /gemsoft/opt/gpi/gmp-server-$VERSION
+                                    if [ $1 -ne 1 ]; then
+                                        rm -f ${installationroot}/${project.artifactId}
+                                    fi
+                                    ln -s ${installationroot}/${project.artifactId}-${gmp.version}/ ${installationroot}/${project.artifactId}
+
+                                    #symlink /gemsoft/opt/bin -&gt; /gemsoft/opt/gpi/gmp-server-$VERSION/bin/gmp-server
+
+                                    # Install the symlinks to the utilities
+                                    [ -d /gemsoft/bin ] || mkdir -p /gemsoft/bin
+
+                                    [ -L /gemsoft/bin/${project.artifactId}-ctl.sh ] &amp;&amp; rm /gemsoft/bin/${project.artifactId}-ctl.sh
+                                    [ -L /gemsoft/bin/giapi-tester.sh ] &amp;&amp; rm /gemsoft/bin/giapi-tester.sh
+                                    [ -L /gemsoft/bin/giapi-tester ] &amp;&amp; rm /gemsoft/bin/giapi-tester
+                                    ln -s ${installationroot}/${project.artifactId}-${gmp.version}/bin/${project.artifactId}-ctl.sh /gemsoft/bin/${project.artifactId}-ctl.sh
+                                    ln -s ${installationroot}/${project.artifactId}-${gmp.version}/bin/giapi-tester.sh /gemsoft/bin/giapi-tester.sh
+                                    ln -s ${installationroot}/${project.artifactId}-${gmp.version}/bin/giapi-tester.sh /gemsoft/bin/giapi-tester
+                                </script>
+                            </postinstallScriptlet>
+                            <postremoveScriptlet>
+                                <script>
+                                    #delete leftover directories
+                                    if [ $1 -eq 0 ]; then
+                                        rm -rf ${installationroot}/${project.artifactId}-${project.version}/bin
+                                        rm -rf ${installationroot}/${project.artifactId}-${project.version}/bundles
+                                        rm -rf ${installationroot}/${project.artifactId}-${project.version}/conf
+                                        rm -rf ${installationroot}/${project.artifactId}-${project.version}/docs
+                                        rm -rf ${installationroot}/${project.artifactId}-${project.version}/felix
+                                        rm ${installationroot}/${project.artifactId}
+                                        rm /gemsoft/bin/${project.artifactId}-ctl.sh
+                                        rm /gemsoft/bin/giapi-tester.sh
+                                        rm /gemsoft/bin/giapi-tester
+                                    fi
+                                </script>
+                            </postremoveScriptlet>
+                        </configuration>
+                    </plugin>
+
+                    <!-- Upload tar.gz and RPM -->
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>wagon-maven-plugin</artifactId>
+                        <version>1.0-beta-3</version>
+                        <executions>
+                            <execution>
+                                <id>upload-tar</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>upload-single</goal>
+                                </goals>
+                                <configuration>
+                                    <serverId>sbfgpidev</serverId>
+                                    <fromFile>
+                                        ${project.build.directory}/${project.artifactId}-${gmp.version}.tar.gz
+                                    </fromFile>
+                                    <url>
+                                        scp://sbfgpidev1.cl.gemini.edu/export/home/software/gpi/webcontent/gpi/${project.artifactId}/R${project.version}/
+                                    </url>
+                                    <skip>${noUpload}</skip>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>upload-rpm</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>upload-single</goal>
+                                </goals>
+                                <configuration>
+                                    <serverId>sbfgpidev</serverId>
+                                    <fromFile>
+                                        ${project.build.directory}/rpm/${project.parent.name}/RPMS/i386/${project.artifactId}-${rpmversion}-${buildNumber}.i386.rpm
+                                    </fromFile>
+                                    <url>
+                                        scp://sbfgpidev1.cl.gemini.edu/export/home/software/gpi/webcontent/gpi/${project.artifactId}/R${project.version}/
+                                    </url>
+                                    <skip>${noUpload}</skip>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+
+        </profile>
+    </profiles>
+</project>
