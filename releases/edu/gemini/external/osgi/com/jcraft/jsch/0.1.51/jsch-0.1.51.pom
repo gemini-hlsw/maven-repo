@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <groupId>edu.gemini.external.osgi</groupId>
+        <artifactId>wrapper-bundle-settings</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <properties>
+        <wrapped.groupId>com.jcraft</wrapped.groupId>
+    </properties>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.gemini.external.osgi.com.jcraft</groupId>
+    <artifactId>jsch</artifactId>
+    <version>0.1.51</version>
+
+    <name>JSch</name>
+    <description>JSch wrapped in OSGi</description>
+
+    <packaging>bundle</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>${wrapped.groupId}</groupId>
+            <artifactId>${project.artifactId}</artifactId>
+            <version>${project.version}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.jcraft</groupId>
+                    <artifactId>jsch</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+</project>
