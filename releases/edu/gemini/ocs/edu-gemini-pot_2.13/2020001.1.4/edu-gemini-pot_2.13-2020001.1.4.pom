@@ -49,17 +49,17 @@
         <dependency>
             <groupId>edu.gemini.ocs</groupId>
             <artifactId>edu-gemini-model-p1-pdf_2.13</artifactId>
-            <version>2020102.1.4</version>
+            <version>2021001.1.1</version>
         </dependency>
         <dependency>
             <groupId>edu.gemini.ocs</groupId>
             <artifactId>edu-gemini-model-p1_2.13</artifactId>
-            <version>2020102.1.4</version>
+            <version>2021001.1.1</version>
         </dependency>
         <dependency>
             <groupId>edu.gemini.ocs</groupId>
             <artifactId>edu-gemini-model-p1-targetio_2.13</artifactId>
-            <version>2020102.1.4</version>
+            <version>2021001.1.1</version>
         </dependency>
         <dependency>
             <groupId>edu.gemini.ocs</groupId>
