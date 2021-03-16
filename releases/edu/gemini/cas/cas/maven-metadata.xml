@@ -3,7 +3,7 @@
   <groupId>edu.gemini.cas</groupId>
   <artifactId>cas</artifactId>
   <versioning>
-    <release>0.4.5</release>
+    <release>0.4.6</release>
     <versions>
       <version>0.3.5</version>
       <version>0.3.6</version>
@@ -17,7 +17,8 @@
       <version>0.4.3</version>
       <version>0.4.4</version>
       <version>0.4.5</version>
+      <version>0.4.6</version>
     </versions>
-    <lastUpdated>20210301190742</lastUpdated>
+    <lastUpdated>20210316184750</lastUpdated>
   </versioning>
 </metadata>
