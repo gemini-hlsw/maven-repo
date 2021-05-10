@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <groupId>edu.gemini.external.osgi</groupId>
+        <artifactId>wrapper-bundle-settings</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <properties>
+        <wrapped.groupId>ws-commons-util</wrapped.groupId>
+    </properties>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.gemini.external.osgi.ws-commons-util</groupId>
+    <artifactId>ws-commons-util</artifactId>
+    <version>1.0.1</version>
+
+    <name>Apache WS Common Libraries</name>
+    <description>Apache WS Common Library wrapped in OSGi</description>
+
+    <packaging>bundle</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>${wrapped.groupId}</groupId>
+            <artifactId>${project.artifactId}</artifactId>
+            <version>${project.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+</project>
