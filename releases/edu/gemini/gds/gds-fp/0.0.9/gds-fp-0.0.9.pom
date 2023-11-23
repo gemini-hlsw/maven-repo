@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <!-- If a parent pom is specified, it pulls in extra classes, such as the osgi ones. -->
+
+    <properties>
+        <bundle.symbolicName>edu.gemini.aspen.gds.fp</bundle.symbolicName>
+        <bundle.namespace>edu.gemini.aspen.gds.fp</bundle.namespace>
+        <fs2.version>3.9.3</fs2.version>
+        <http4s.version>0.23.23</http4s.version>
+        <fs2.core>fs2-core_2.13</fs2.core>
+        <fs2.io>fs2-io_2.13</fs2.io>
+        <http4s.core>http4s-core_2.13</http4s.core>
+        <http4s.ember.server>http4s-ember-server_2.13</http4s.ember.server>
+        <http4s.dsl>http4s-dsl_2.13</http4s.dsl>
+        <http4s.circe>http4s-circe_2.13</http4s.circe>
+    </properties>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.gemini.gds</groupId>
+    <artifactId>gds-fp</artifactId>
+    <version>0.0.9</version>
+
+    <name>GDS FP</name>
+    <description>The module contains the typelevel and other non-osgi functional programming dependencies for GDS</description>
+
+    <packaging>bundle</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>3.5.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <unpackBundle>false</unpackBundle>
+                    <instructions>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Bundle-SymbolicName>${bundle.symbolicName}</Bundle-SymbolicName>
+                        <!-- jnr.unixsocket is an optional dependency for fs2.io -->
+                        <Import-Package>!jnr.unixsocket; *</Import-Package>
+                        <Private-Package>!*</Private-Package>
+                        <Embed-Dependency>*;scope=compile|runtime;type=!pom;inline=true</Embed-Dependency>
+                        <Embed-Transitive>true</Embed-Transitive>
+                        <_exportcontents>*</_exportcontents>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>edu.gemini.exts</id>
+            <name>sbfosxdev01.cl.gemini.edu-ext-releases</name>
+            <!-- <url>http://sbfosxdev-mp1.cl.gemini.edu:8081/artifactory/ext-release-local</url> -->
+            <url>file:///Users/tburnside/code/noirlab/maven-repo/releases</url>
+        </repository>
+        <!-- <snapshotRepository> -->
+        <!--     <id>edu.gemini.exts</id> -->
+        <!--     <name>sbfosxdev01.cl.gemini.edu-ext-snapshots</name> -->
+        <!--     <url>http://build.cl.gemini.edu:8081/artifactory/ext-snapshots-local</url> -->
+        <!-- </snapshotRepository> -->
+    </distributionManagement>
+    <dependencies>
+
+        <!-- slf4j needs to be marked as provided because pax logging provides it. -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.30</version>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>co.fs2</groupId>
+            <artifactId>${fs2.core}</artifactId>
+            <version>${fs2.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>co.fs2</groupId>
+            <artifactId>${fs2.io}</artifactId>
+            <version>${fs2.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.log4s</groupId>
+            <artifactId>log4s_2.13</artifactId>
+            <version>1.10.0-M6</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.http4s</groupId>
+            <artifactId>${http4s.ember.server}</artifactId>
+            <version>${http4s.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.http4s</groupId>
+            <artifactId>${http4s.dsl}</artifactId>
+            <version>${http4s.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.http4s</groupId>
+            <artifactId>${http4s.circe}</artifactId>
+            <version>${http4s.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+</project>
