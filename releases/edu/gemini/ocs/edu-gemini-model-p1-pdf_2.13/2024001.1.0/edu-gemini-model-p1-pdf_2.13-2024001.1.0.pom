@@ -19,7 +19,7 @@
         <dependency>
             <groupId>edu.gemini.ocs</groupId>
             <artifactId>edu-gemini-util-pdf_2.13</artifactId>
-            <version>2023101.1.2</version>
+            <version>2024001.1.2</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
