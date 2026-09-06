@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.typelevel</groupId>
+    <artifactId>grackle-docs_2.13</artifactId>
+    <packaging>jar</packaging>
+    <description>grackle-docs</description>
+    <url>https://typelevel.org/grackle</url>
+    <version>0.31-c6b61ea-20260906T194346Z-SNAPSHOT</version>
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <name>grackle-docs</name>
+    <inceptionYear>2019</inceptionYear>
+    <organization>
+        <name>Typelevel</name>
+        <url>https://typelevel.org</url>
+    </organization>
+    <scm>
+        <url>https://github.com/typelevel/grackle</url>
+        <connection>scm:git:https://github.com/typelevel/grackle.git</connection>
+        <developerConnection>scm:git:git@github.com:typelevel/grackle.git</developerConnection>
+    </scm>
+    <developers>
+        <developer>
+            <id>milessabin</id>
+            <name>Miles Sabin</name>
+            <url>http://milessabin.com/blog</url>
+            <email>miles@milessabin.com</email>
+        </developer>
+        <developer>
+            <id>tpolecat</id>
+            <name>Rob Norris</name>
+            <url>http://www.tpolecat.org</url>
+            <email>rnorris@gemini.edu</email>
+        </developer>
+    </developers>
+    <properties>
+        <info.apiURL>https://javadoc.invalid/doc/org.typelevel/grackle-docs_2.13/0.31-c6b61ea-20260906T194346Z-SNAPSHOT/</info.apiURL>
+        <info.versionScheme>early-semver</info.versionScheme>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.13.18</version>
+        </dependency>
+        <dependency>
+            <groupId>org.typelevel</groupId>
+            <artifactId>scalac-compat-annotation_2.13</artifactId>
+            <version>0.1.4</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>
