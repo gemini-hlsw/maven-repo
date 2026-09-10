@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.typelevel</groupId>
+    <artifactId>sbt-typelevel-no-publish_sbt2_3</artifactId>
+    <packaging>jar</packaging>
+    <description>sbt-typelevel-no-publish</description>
+    <url>https://zainab-ali.github.io/sbt-typelevel</url>
+    <version>0.8-c827b1a-20260910T122817Z-SNAPSHOT</version>
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <name>sbt-typelevel-no-publish</name>
+    <inceptionYear>2022</inceptionYear>
+    <organization>
+        <name>Typelevel</name>
+        <url>https://typelevel.org</url>
+    </organization>
+    <scm>
+        <url>https://github.com/zainab-ali/sbt-typelevel</url>
+        <connection>scm:git:https://github.com/zainab-ali/sbt-typelevel.git</connection>
+        <developerConnection>scm:git:git@github.com:zainab-ali/sbt-typelevel.git</developerConnection>
+    </scm>
+    <developers>
+        <developer>
+            <id>zainab-ali</id>
+            <name>sbt-typelevel contributors</name>
+            <url>https://github.com/zainab-ali/sbt-typelevel/contributors</url>
+            <email>@zainab-ali</email>
+        </developer>
+        <developer>
+            <id>armanbilge</id>
+            <name>Arman Bilge</name>
+            <url>https://github.com/armanbilge</url>
+            <email>@armanbilge</email>
+        </developer>
+        <developer>
+            <id>rossabaker</id>
+            <name>Ross A. Baker</name>
+            <url>https://github.com/rossabaker</url>
+            <email>@rossabaker</email>
+        </developer>
+        <developer>
+            <id>ChristopherDavenport</id>
+            <name>Christopher Davenport</name>
+            <url>https://github.com/ChristopherDavenport</url>
+            <email>@ChristopherDavenport</email>
+        </developer>
+        <developer>
+            <id>djspiewak</id>
+            <name>Daniel Spiewak</name>
+            <url>https://github.com/djspiewak</url>
+            <email>@djspiewak</email>
+        </developer>
+    </developers>
+    <properties>
+        <info.apiURL>https://javadoc.invalid/doc/org.typelevel/sbt-typelevel-docs_3/0.8-c827b1a-20260910T122817Z-SNAPSHOT/</info.apiURL>
+        <info.versionScheme>early-semver</info.versionScheme>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-sbt</groupId>
+            <artifactId>sbt</artifactId>
+            <version>2.0.6</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala3-library_3</artifactId>
+            <version>3.8.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.typelevel</groupId>
+            <artifactId>scalac-compat-annotation_3</artifactId>
+            <version>0.1.4</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>
