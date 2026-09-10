@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.typelevel</groupId>
+    <artifactId>laika-pdf_3</artifactId>
+    <packaging>jar</packaging>
+    <description>Text Markup Transformer for sbt and Scala applications</description>
+    <url>https://typelevel.org/Laika/</url>
+    <version>1.3.2-47-7bf5db5-20260910T121611Z-SNAPSHOT</version>
+    <licenses>
+        <license>
+            <name>Apache 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <name>laika-pdf</name>
+    <inceptionYear>2012</inceptionYear>
+    <organization>
+        <name>Typelevel</name>
+        <url>http://typelevel.org</url>
+    </organization>
+    <scm>
+        <url>https://github.com/typelevel/Laika</url>
+        <connection>scm:git:https://github.com/typelevel/Laika.git</connection>
+        <developerConnection>scm:git:git@github.com:typelevel/Laika.git</developerConnection>
+    </scm>
+    <developers>
+        <developer>
+            <id>jenshalm</id>
+            <name>Jens Halm</name>
+            <url>http://planet42.org</url>
+        </developer>
+    </developers>
+    <properties>
+        <info.apiURL>https://javadoc.invalid/doc/org.typelevel/laika-docs_3/1.3.2-47-7bf5db5-20260910T121611Z-SNAPSHOT/</info.apiURL>
+        <info.versionScheme>early-semver</info.versionScheme>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.typelevel</groupId>
+            <artifactId>laika-core_3</artifactId>
+            <version>1.3.2-47-7bf5db5-20260910T121611Z-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.typelevel</groupId>
+            <artifactId>laika-io_3</artifactId>
+            <version>1.3.2-47-7bf5db5-20260910T121611Z-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala3-library_3</artifactId>
+            <version>3.3.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.typelevel</groupId>
+            <artifactId>scalac-compat-annotation_3</artifactId>
+            <version>0.1.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>fop</artifactId>
+            <version>2.11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scalameta</groupId>
+            <artifactId>munit_3</artifactId>
+            <version>1.1.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
