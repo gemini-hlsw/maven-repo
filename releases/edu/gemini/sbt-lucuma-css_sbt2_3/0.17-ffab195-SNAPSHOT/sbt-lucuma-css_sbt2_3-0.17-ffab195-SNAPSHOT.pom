@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.gemini</groupId>
+    <artifactId>sbt-lucuma-css_sbt2_3</artifactId>
+    <packaging>jar</packaging>
+    <description>sbt-lucuma-css</description>
+    <url>https://github.com/gemini-hlsw/sbt-lucuma</url>
+    <version>0.17-ffab195-SNAPSHOT</version>
+    <licenses>
+        <license>
+            <name>BSD-3-Clause</name>
+            <url>https://opensource.org/licenses/BSD-3-Clause</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <name>sbt-lucuma-css</name>
+    <organization>
+        <name>Association of Universities for Research in Astronomy, Inc. (AURA)</name>
+        <url>https://github.com/gemini-hlsw/sbt-lucuma</url>
+    </organization>
+    <scm>
+        <url>https://github.com/gemini-hlsw/sbt-lucuma</url>
+        <connection>scm:git:https://github.com/gemini-hlsw/sbt-lucuma.git</connection>
+        <developerConnection>scm:git:git@github.com:gemini-hlsw/sbt-lucuma.git</developerConnection>
+    </scm>
+    <developers>
+        <developer>
+            <id>cquiroz</id>
+            <name>Carlos Quiroz</name>
+            <url>https://www.gemini.edu</url>
+            <email>cquiroz@gemini.edu</email>
+        </developer>
+        <developer>
+            <id>jluhrs</id>
+            <name>Javier Lührs</name>
+            <url>https://www.gemini.edu</url>
+            <email>jluhrs@gemini.edu</email>
+        </developer>
+        <developer>
+            <id>sraaphorst</id>
+            <name>Sebastian Raaphorst</name>
+            <url>https://www.gemini.edu</url>
+            <email>sraaphorst@gemini.edu</email>
+        </developer>
+        <developer>
+            <id>swalker2m</id>
+            <name>Shane Walker</name>
+            <url>https://www.gemini.edu</url>
+            <email>swalker@gemini.edu</email>
+        </developer>
+        <developer>
+            <id>tpolecat</id>
+            <name>Rob Norris</name>
+            <url>https://www.tpolecat.org</url>
+            <email>rnorris@gemini.edu</email>
+        </developer>
+        <developer>
+            <id>rpiaggio</id>
+            <name>Raúl Piaggio</name>
+            <url>https://www.gemini.edu</url>
+            <email>rpiaggio@gemini.edu</email>
+        </developer>
+        <developer>
+            <id>toddburnside</id>
+            <name>Todd Burnside</name>
+            <url>https://www.gemini.edu</url>
+            <email>tburnside@gemini.edu</email>
+        </developer>
+        <developer>
+            <id>hugo-vrijswijk</id>
+            <name>Hugo van Rijswijjk</name>
+            <url>https://www.gemini.edu</url>
+            <email>hugovr@castor-it.nl</email>
+        </developer>
+    </developers>
+    <properties>
+        <info.apiURL>https://javadoc.invalid/doc/edu.gemini/sbt-lucuma-css_3/0.17-ffab195-SNAPSHOT/</info.apiURL>
+        <info.versionScheme>early-semver</info.versionScheme>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-sbt</groupId>
+            <artifactId>sbt</artifactId>
+            <version>2.0.8</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala3-library_3</artifactId>
+            <version>3.8.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.typelevel</groupId>
+            <artifactId>scalac-compat-annotation_3</artifactId>
+            <version>0.1.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-js</groupId>
+            <artifactId>sbt-scalajs_sbt2_3</artifactId>
+            <version>1.22.0</version>
+        </dependency>
+    </dependencies>
+</project>
